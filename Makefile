@@ -9,7 +9,7 @@ CFLAGS  = -w -Wall -s -Os -Wextra -masm=intel -fPIC -e __main2
 CFLAGS += -fno-asynchronous-unwind-tables -nostdlib -fno-diagnostics-show-caret
 CFLAGS += -fdata-sections -ffunction-sections -Wl,--gc-sections
 
-OUT     = -o bin/xorHelper.exe
+OUT     = -o xorHelper.exe
 
 LINKFLAGS	= -lkernel32 -lmsvcrt
 WINDOWFLAGS	= -mwindows
