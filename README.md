@@ -5,7 +5,7 @@ sudo apt install -y git build-essential apt-utils cmake libfontconfig1 libglu1-m
 
 compile the project
 ```bash
-git clone https://github.com/CircuitSoul/xorHelper
+git clone https://github.com/CircuitSoul/xorHelper.git
 cd xorHelper
 make
 ```
