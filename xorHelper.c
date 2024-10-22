@@ -1,5 +1,6 @@
 #include <windows.h>
 
+// msfvenom -p windows/x64/exec CMD=calc.exe -f c
 unsigned char xxx[] = {
 	0xFC, 0x48, 0x83, 0xE4, 0xF0, 0xE8, 0xC0, 0x00, 0x00, 0x00, 0x41, 0x51,
 	0x41, 0x50, 0x52, 0x51, 0x56, 0x48, 0x31, 0xD2, 0x65, 0x48, 0x8B, 0x52,
@@ -26,7 +27,7 @@ unsigned char xxx[] = {
 	0xDA, 0xFF, 0xD5, 0x63, 0x61, 0x6C, 0x63, 0x00
 };
 
-// XOR encryption and decryption
+// XOR encryption and decryption function using a random array of bytes of specific size
 VOID XorByInputKey(IN PBYTE pShellcode, IN SIZE_T sShellcodeSize, IN PBYTE bKey, IN SIZE_T sKeySize) {
 	for (size_t i = 0, j = 0; i < sShellcodeSize; i++, j++) {
 		if (j >= sKeySize){
@@ -36,6 +37,7 @@ VOID XorByInputKey(IN PBYTE pShellcode, IN SIZE_T sShellcodeSize, IN PBYTE bKey,
 	}
 }
 
+// XOR key
 unsigned char xorKey[] = { 0x01, 0x01, 0x02, 0x03, 0x04, 0x05, 0x60, 0x12, 0x56 };
 
 int __main2() {
